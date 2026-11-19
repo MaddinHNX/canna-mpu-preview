@@ -519,11 +519,18 @@ textarea {
   border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-.hero__image {
+.hero__team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background-color: rgba(255, 255, 255, 0.14);
+}
+
+.hero__team-photo {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: 41% 18%;
 }
 
 .hero__caption {
@@ -531,29 +538,147 @@ textarea {
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
-  padding: 0.9rem 1.15rem;
-  background: rgba(11, 28, 22, 0.92);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.95rem 1.2rem;
+  background: rgba(11, 28, 22, 0.94);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   font-size: 0.85rem;
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
 .hero__caption strong {
   display: block;
   color: #ffffff;
-  font-size: 0.9rem;
+  font-size: 0.94rem;
 }
 
 .hero__caption span {
-  color: rgba(250, 249, 245, 0.72);
-  font-size: 0.8rem;
+  color: rgba(250, 249, 245, 0.8);
+  font-size: 0.81rem;
 }
 
-.hero__placeholder-note {
-  margin-top: 0.55rem;
-  font-size: 0.76rem;
-  color: rgba(250, 249, 245, 0.6);
-  text-align: right;
+.hero__bdp-badge {
+  flex-shrink: 0;
+  padding: 0.28rem 0.65rem;
+  border-radius: var(--radius-pill);
+  background: rgba(244, 198, 49, 0.16);
+  border: 1px solid rgba(244, 198, 49, 0.42);
+  color: var(--gold-200);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   Sektion: Unser ON MPU Expertenteam
+   ========================================================================== */
+.team-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.25rem;
+}
+
+@media (min-width: 768px) {
+  .team-gallery {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.35rem;
+  }
+}
+
+.team-portrait {
+  margin: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--forest-900);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-md);
+}
+
+.team-portrait img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 41% 16%;
+  transition: transform 0.35s var(--ease);
+}
+
+.team-portrait:hover img {
+  transform: scale(1.03);
+}
+
+.team-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .team-content {
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 2.75rem;
+  }
+}
+
+.team-copy {
+  background-color: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.85rem 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.team-copy p {
+  margin: 0 0 1rem;
+  color: var(--ink-700);
+  font-size: 1rem;
+}
+
+.team-copy p:first-child {
+  color: var(--ink-900);
+  font-weight: 500;
+}
+
+.team-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.team-credentials {
+  list-style: none;
+  margin: 0;
+  padding: 1.75rem;
+  background-color: var(--forest-900);
+  color: var(--paper-50);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: var(--shadow-md);
+}
+
+.team-credentials__title {
+  margin: 0 0 0.25rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--gold-200);
+}
+
+.team-credentials__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  font-size: 0.93rem;
+  line-height: 1.45;
+  color: rgba(250, 249, 245, 0.92);
+}
+
+.team-credentials__icon {
+  color: var(--gold-400);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
 }
 
 /* ==========================================================================
